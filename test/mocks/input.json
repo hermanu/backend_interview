@@ -1,0 +1,43 @@
+{
+    "items":[
+      {
+        "label":"Top Games",
+        "games":[
+          {
+            "name":"Game 1",
+            "tag":"Top"
+          },
+          {
+            "name":"Game 2",
+            "tag":"Top"
+          }
+        ]
+      },
+      {
+        "label":"New Games",
+        "games":[
+          {
+            "name":"Game 3",
+            "tag":"New"
+          }
+        ]
+      }
+    ],
+    "games":[
+      {
+        "name":"Game 1",
+        "customProp1":"a",
+        "customProp2":"b"
+      },
+      {
+        "name":"Game 2",
+        "customProp1":"a",
+        "customProp2":"b"
+      },
+      {
+        "name":"Game 3",
+        "customProp1":"a",
+        "customProp2":"Life is Beautiful"
+      }
+    ]
+  }
