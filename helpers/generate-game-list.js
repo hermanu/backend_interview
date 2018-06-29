@@ -1,7 +1,6 @@
 let generateGameList = params => {
   const { items, games } = params
   let response = Object.assign({ categories: [] })
-
   items.forEach(item => {
     let { label, games: itemGames } = item
 
