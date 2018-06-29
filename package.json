@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "lint": "eslint --fix .",
+    "lint": "standard --verbose --fix | snazzy",
     "start": "node ./bin/www",
     "test": "mocha"
   },
@@ -19,6 +19,12 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "ignore": ["test"]
   }
+
 }

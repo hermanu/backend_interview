@@ -1,7 +1,7 @@
 let generateGameList = params => {
   const { items, games } = params
   let response = Object.assign({ categories: [] })
-  
+
   for (let i = 0; i < items.length; i++) {
     let { label, games: itemGames } = items[i]
     response.categories.push({ label, games: [] })
@@ -16,10 +16,10 @@ let generateGameList = params => {
 // Search for the game on the gameList and sets the tag
 let assignTagToGame = (gameList, itemGame) => {
   for (const game of gameList) {
-    if (game.name === itemGame.name ){
+    if (game.name === itemGame.name) {
       var updatedGame = Object.assign(game, itemGame, {tag: itemGame.tag})
       transFormGameCustomProps(updatedGame)
-      break;
+      break
     }
   }
   return updatedGame

@@ -9,5 +9,6 @@ router.get('/', function (req, res, next) {
 router.post('/game-list', function (req, res, next) {
   const { body: gameList } = req
   const response = generateGameList(gameList)
+  res.send(response)
 })
 module.exports = router
