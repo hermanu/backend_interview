@@ -1,35 +1,28 @@
 let generateGameList = params => {
   const { items, games } = params
   let response = Object.assign({ categories: [] })
-  items.forEach(item => {
-    let { label, games: itemGames } = item
-
-    // Create label for category and push it with a games array
+  
+  for (let i = 0; i < items.length; i++) {
+    let { label, games: itemGames } = items[i]
     response.categories.push({ label, games: [] })
-
-    // Select the category that we just push
-    // TODO: Find another way?
-    var [currentCategory] = response.categories.filter(
-      category => category.label === label
-    )
-
-    // Loop each game inside the item
-    itemGames.forEach(itemGame => {
-      let gameWithTag = assignTagToGame(games, itemGame)
-      currentCategory.games.push(gameWithTag)
-    })
-  })
+    for (let j = 0; j < itemGames.length; j++) {
+      let gameWithTag = assignTagToGame(games, itemGames[j])
+      response.categories[i].games.push(gameWithTag)
+    }
+  }
   return response
 }
 
 // Search for the game on the gameList and sets the tag
-let assignTagToGame = (gameList, game) => {
-  let [currentGame] = gameList.filter(g => g.name === game.name)
-  currentGame.tag = game.tag
-
-  // Transform properties to lower case and replace blank spaces
-  transFormGameCustomProps(currentGame)
-  return currentGame
+let assignTagToGame = (gameList, itemGame) => {
+  for (const game of gameList) {
+    if (game.name === itemGame.name ){
+      var updatedGame = Object.assign(game, itemGame, {tag: itemGame.tag})
+      transFormGameCustomProps(updatedGame)
+      break;
+    }
+  }
+  return updatedGame
 }
 
 // Loops each property of object and replaces the needed ones

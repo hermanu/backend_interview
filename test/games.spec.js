@@ -28,8 +28,5 @@ describe("Games Tests", () => {
 
     expect(gameList.categories[1].games[0]).to.haveOwnProperty("customProp1").to.be.an('String').and.match(/^[a-z-]*$/)
     expect(gameList.categories[1].games[0]).to.haveOwnProperty("customProp2").to.be.an('String').and.match(/^[a-z-]*$/)
-    
-    
-
   });
 });
